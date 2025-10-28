@@ -47,9 +47,7 @@ src/
 │       └── Sidebar.jsx          # Menu lateral com navegação (Dashboard / Movies)
 │
 ├── hooks/
-│   └── useDebounce.js           # Hook genérico para debounce
-│
-└── tests/                       # (opcional) diretório agrupando specs
+    └── useDebounce.js           # Hook genérico para debounce
 ```
 
 ---
@@ -58,11 +56,12 @@ src/
 
 ```bash
 # Clonar o repositório
-git clone https://github.com/seu-usuario/golden-raspberry-awards.git
-cd golden-raspberry-awards
+git clone https://github.com/ClaudioR97/react-coding
+cd react-coding/golden-raspberry-awards
 
 # Instalar dependências
 npm install
+npm install --save-dev @testing-library/react @testing-library/dom
 
 # Rodar localmente
 npm run dev
@@ -81,7 +80,6 @@ npm run test
 #### **`GenericTable`**
 
 * Reaproveitável para qualquer conjunto de colunas e dados.
-* Usa `<Table>` do MUI com paginação e ordenação customizável.
 * Suporte a `noDataMessage` (“No data available”).
 
 #### **`CardComponent`**
@@ -168,15 +166,6 @@ npm run test
 
 ---
 
-### 🧩 Próximas Melhorias
-
-* Adicionar **testes de integração e snapshots**.
-* Configurar **CI/CD (GitHub Actions)** para rodar testes automaticamente.
-* Adicionar **modo dark/light theme** global.
-* Documentar **endpoint base da API** no `.env`.
-
----
-
 ### 👨‍💻 Autor
 
 **Claudio Ramos**
@@ -189,3 +178,4 @@ npm run test
 
 Distribuído sob a licença **MIT**.
 Sinta-se livre para usar, estudar e adaptar.
+
