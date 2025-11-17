@@ -9,7 +9,6 @@ jest.mock('@/app/api/clienteApi', () => ({
 }));
 
 describe('useFilmesApi', () => {
-  // Verifica se busca anos com múltiplos vencedores
   it('fetches years with multiple winners', async () => {
     const mockData = { data: { years: [{ year: 1980, winnerCount: 2 }] } };
     const { clienteApi } = await import('@/app/api/clienteApi');
@@ -22,7 +21,6 @@ describe('useFilmesApi', () => {
     expect(clienteApi.get).toHaveBeenCalledWith('/movies/yearsWithMultipleWinners');
   });
 
-  // Verifica se busca vencedores por ano
   it('fetches winners by year', async () => {
     const compVal = [
       {
@@ -51,7 +49,6 @@ describe('useFilmesApi', () => {
     expect(clienteApi.get).toHaveBeenCalledWith('/movies/yearsWithMultipleWinners');
   });
 
-  // Verifica se busca os estúdios com contagem de vitórias
   it('fetches top studios with win count', async () => {
     const mockData = { data: { studios: [{ name: 'Studio A', winCount: 5 }] } };
     const { clienteApi } = await import('@/app/api/clienteApi');
@@ -64,7 +61,6 @@ describe('useFilmesApi', () => {
     expect(clienteApi.get).toHaveBeenCalledWith('/movies/studiosWithWinCount');
   });
 
-  // Verifica se busca os intervalos entre vitórias dos produtores com retorno vazio
   it('fetches empty producer win intervals', async () => {
     const mockData = { data: { min: [], max: [] } };
     const { clienteApi } = await import('@/app/api/clienteApi');
@@ -77,7 +73,6 @@ describe('useFilmesApi', () => {
     expect(clienteApi.get).toHaveBeenCalledWith('/movies/maxMinWinIntervalForProducers');
   });
 
-  // Verifica se busca os intervalos entre vitórias dos produtores com dados
   it('fetches producer win intervals', async () => {
     const compVal = {
       'min': [
@@ -108,7 +103,6 @@ describe('useFilmesApi', () => {
     expect(clienteApi.get).toHaveBeenCalledWith('/movies/maxMinWinIntervalForProducers');
   });
 
-  // Verifica se busca todos os filmes a partir da query
   it('fetches movies with query', async () => {
     const mockData = { data: { content: [] } };
     const { clienteApi } = await import('@/app/api/clienteApi');
@@ -122,7 +116,6 @@ describe('useFilmesApi', () => {
     expect(clienteApi.get).toHaveBeenCalledWith(`/movies${query}`);
   });
 
-  // Verifica se busca filmes com query da segunda página
   it('fetches movies with query second page', async () => {
     const compVal = {
       'content': [

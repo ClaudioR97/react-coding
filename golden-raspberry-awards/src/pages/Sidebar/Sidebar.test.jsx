@@ -12,7 +12,6 @@ jest.mock('react-router-dom', () => ({
 }));
 
 describe('Sidebar', () => {
-  // Verifica se renderiza os itens do menu e navega ao clicar
   it('renders menu items and navigates on click', () => {
     render(
       <MemoryRouter>

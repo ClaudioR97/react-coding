@@ -8,7 +8,7 @@ export default function Routing() {
   return (
     <Routes>
       <Route element={<MainLayout />}>
-        <Route index element={<Home />} /> {/* equivale a path="/" */}
+        <Route index element={<Home />} />
         <Route path="movies" element={<MovieList />} />
       </Route>
 

@@ -10,7 +10,7 @@ export default function Topbar() {
       sx={{
         backgroundColor: '#2d2d2d',
         boxShadow: 'none',
-        zIndex: (theme) => theme.zIndex.drawer + 1, // garante que fica acima da sidebar
+        zIndex: (theme) => theme.zIndex.drawer + 1,
       }}
     >
       <Toolbar>

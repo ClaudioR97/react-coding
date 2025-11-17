@@ -28,15 +28,13 @@ export default function MovieList() {
 
   const [movies, setFilmes] = useState([]);
   const [pagina, setPagina] = useState(0);
-  // eslint-disable-next-line no-unused-vars
-  const [tamanho, setTamanho] = useState(10);
   const [total, setTotal] = useState(0);
   const [filtroAno, setFiltroAno] = useState('');
   const [filtroWinner, setFiltroWinner] = useState('');
   const filtroAnoDebounced = useDebounce(filtroAno, 600);
 
   const buscarFilmes = useCallback(async () => {
-    let query = `?page=${pagina}&size=${tamanho}`;
+    let query = `?page=${pagina}&size=10`;
     if (filtroAnoDebounced) query += `&year=${filtroAnoDebounced}`;
     if (filtroWinner) query += `&winner=${filtroWinner === 'Yes'}`;
 
@@ -47,7 +45,7 @@ export default function MovieList() {
     } catch (e) {
       console.error('Erro ao buscar movies:', e);
     }
-  }, [filtroAnoDebounced, filtroWinner, getMovies, pagina, tamanho]);
+  }, [filtroAnoDebounced, filtroWinner, getMovies, pagina]);
 
   const handleChangePage = useCallback((novaPagina) => setPagina(novaPagina), []);
 
@@ -140,7 +138,7 @@ export default function MovieList() {
       <Box display="flex" justifyContent="center">
         <CustomPagination
           page={pagina}
-          totalPages={Math.ceil(total / tamanho)}
+          totalPages={Math.ceil(total / 10)}
           onChangePage={handleChangePage}
         />
       </Box>

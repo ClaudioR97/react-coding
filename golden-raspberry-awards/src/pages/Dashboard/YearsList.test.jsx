@@ -10,7 +10,6 @@ jest.mock('@/features/movies/hooks', () => ({
   }),
 }));
 
-// Verifica se renderiza os anos vindos da API
 test('renders years from API', async () => {
   render(<YearsList />);
 

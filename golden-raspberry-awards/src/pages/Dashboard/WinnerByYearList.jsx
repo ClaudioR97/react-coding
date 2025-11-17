@@ -17,8 +17,12 @@ export default function WinnerByYearList() {
 
   const handleSearch = useCallback(async (year) => {
     try {
-      const data = await getWinnerByYear(year);
-      setList(data || []);
+      if (year) {
+        const data = await getWinnerByYear(year);
+        setList(data || []);
+      } else {
+        setList([]);
+      }
     } catch (e) {
       console.error('Error fetching winners by year:', e);
     }
